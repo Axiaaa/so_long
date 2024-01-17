@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:01:09 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 15:46:49 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:20:09 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void is_rectangle(t_so_long *so_long)
 		}
 		i++;
 	}
-	ft_printf("[DEBUG] Rectangle OK\n");
 }
 
 void check_verticales_wall(t_so_long *so_long)
@@ -66,7 +65,6 @@ void check_verticales_wall(t_so_long *so_long)
 		}
 		i++;
 	}
-	ft_printf("[DEBUG] Verticales OK\n");
 }
 
 void check_horizontales_wall(t_so_long *so_long)
@@ -93,7 +91,6 @@ void check_horizontales_wall(t_so_long *so_long)
 		}
 		i++;
 	}
-	ft_printf("[DEBUG] Horizontales OK\n");
 }
 
 void char_check(t_so_long *so_long, char c, size_t i, size_t j)
@@ -130,10 +127,7 @@ void check_global_map(t_so_long *so_long)
 		j++;
 	}
 	if (so_long->r_map.exit == 1 && so_long->r_map.player_spawn == 1 && so_long->r_map.items >= 1)
-	{
-		ft_putstr_fd("[DEBUG] Items OK, Player Spawn OK, Exit OK\n", 1);
 		return;
-	}
 	ft_putstr_fd("Error\nMap invalid (Requirements not fullfilled)", 2);
 	exit_error(so_long);
 }

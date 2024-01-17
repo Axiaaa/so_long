@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:01:09 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 16:20:09 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:16:11 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,8 @@ void is_rectangle(t_so_long *so_long)
 void check_verticales_wall(t_so_long *so_long)
 {
 	size_t i;
-	size_t len_str;
 
 	i = 0;
-	len_str = 0;
 	while (i < (size_t)map_len(*so_long) - 1)
 	{
 		if (so_long->game.map[i][0] != '1')
@@ -100,8 +98,8 @@ void char_check(t_so_long *so_long, char c, size_t i, size_t j)
 	if (c == 'P')
 	{
 		so_long->r_map.player_spawn += 1;
-		so_long->player.cords.x = i * 44;
-		so_long->player.cords.y = j * 44;
+		so_long->player.cords.x = i * SPRITE_SIZE;
+		so_long->player.cords.y = j * SPRITE_SIZE;
 	}
 	if (c == 'E')
 		so_long->r_map.exit += 1;

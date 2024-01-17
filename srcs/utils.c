@@ -21,11 +21,11 @@ void delete_newline(char **map)
 
 void sprite_init(t_so_long *so_long)
 {
-    so_long->game.player_sprite.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, "./ressources/fox_sprite.xpm", &so_long->game.player_sprite.width, &so_long->game.player_sprite.height);
-    so_long->game.wall.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, "./ressources/water_tile.xpm", &so_long->game.wall.width, &so_long->game.wall.height);
-    so_long->game.grass.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, "./ressources/grass_tile.xpm", &so_long->game.grass.width, &so_long->game.grass.height);
-    so_long->game.exit.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, "./ressources/house_tile.xpm", &so_long->game.exit.width, &so_long->game.exit.height);
-    so_long->game.item.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, "./ressources/milk_tile.xpm", &so_long->game.item.width, &so_long->game.item.height);
+    so_long->game.player_sprite.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, PACMAN_SPRITE, &so_long->game.player_sprite.width, &so_long->game.player_sprite.height);
+    so_long->game.wall.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, WALL_SPRITE, &so_long->game.wall.width, &so_long->game.wall.height);
+    so_long->game.grass.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, BACKGROUND_SPRITE, &so_long->game.grass.width, &so_long->game.grass.height);
+    so_long->game.exit.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, EXIT_SPRITE, &so_long->game.exit.width, &so_long->game.exit.height);
+    so_long->game.item.ptr = mlx_xpm_file_to_image(so_long->vars.mlx, ITEM_SPRITE, &so_long->game.item.width, &so_long->game.item.height);
 }
 
 void check_items(char **map, t_map_requirements *reqs, t_coordinate player_pos, t_coordinate witdhheight)

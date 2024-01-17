@@ -1,4 +1,3 @@
-
 NAME = so_long
 LIBFT = ./libft
 FT_PRINTF = ./libft/ft_printf
@@ -21,9 +20,9 @@ HEADERS = inc/so_long.h
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADERS)
+$(NAME): $(OBJ) $(HEADERS) 
 	@make -C $(LIBFT)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -Iinc ./libft/Libft.a -L $(MLX) -lmlx -lXext -lX11
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -Iinc ./libft/Libft.a ./mlx_linux/libmlx.a -L $(MLX) -lXext -lX11
 	@echo "Compilation done"
 
 %.o: %.c $(HEADERS)

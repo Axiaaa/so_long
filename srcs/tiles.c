@@ -21,8 +21,8 @@ t_coordinate def_window_size(t_so_long *so_long)
         }
         i++;
     }
-    size.x = size.x * 44;
-    size.y = i * 44;
+    size.x = size.x * SPRITE_SIZE;
+    size.y = i * SPRITE_SIZE;
     return (size);
 }
 
@@ -56,10 +56,10 @@ void put_tiles(t_so_long *so_long)
         {
             process_tiles(so_long, so_long->game.map[i][j], xy);
             j++;
-            xy.x += 44;
+            xy.x += SPRITE_SIZE;
         }
         xy.x = 0;
-        xy.y += 44;
+        xy.y += SPRITE_SIZE;
         i++;
     }
 

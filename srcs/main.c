@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 15:53:30 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:05:19 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ int	main(int ac, char **av)
 	}
 	map_size(&so_long);
 	check_global_map(&so_long);
-	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x / 44,
-	so_long.player.cords.y / 44},
+	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x / SPRITE_SIZE,
+	so_long.player.cords.y / SPRITE_SIZE},
 	(t_coordinate){ft_strlen(so_long.game.map[0]), map_len(so_long)}))
 		init_map(&so_long);
 	else 

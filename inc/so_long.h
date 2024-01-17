@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 23:08:52 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 15:52:26 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:15:53 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,12 @@ typedef struct s_so_long {
 	t_mlx_vars vars;
 }				t_so_long;
 
-#define W_KEY 119
-#define S_KEY 115
-#define A_KEY 97
-#define D_KEY 100
-#define FOX_SPRITE "./ressources/fox_sprite.xpm"
-#define GRASS_SPRITE "./ressources/grass_tile.xpm"
-#define EXIT_SPRITE "./ressources/house_tile.xpm"
-#define ITEM_SPRITE "./ressources/milk_tile.xpm"
-#define WALL_SPRITE "./ressources/water_tile.xpm"
+#define SPRITE_SIZE 64
+#define PACMAN_SPRITE "./ressources/pacman1_tile.xpm"
+#define BACKGROUND_SPRITE "./ressources/background_tile.xpm"
+#define EXIT_SPRITE "./ressources/exit_tile.xpm"
+#define ITEM_SPRITE "./ressources/item_tile.xpm"
+#define WALL_SPRITE "./ressources/wall_tile.xpm"
 
 #include "../mlx_linux/mlx.h"
 #include "../mlx_linux/mlx_int.h"

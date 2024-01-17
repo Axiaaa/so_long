@@ -13,7 +13,7 @@ void init_map(t_so_long *so_long)
 
     size = def_window_size(so_long);
     so_long->vars.mlx = mlx_init();
-	so_long->vars.win = mlx_new_window(so_long->vars.mlx, size.x+44, size.y, "so_long");
+	so_long->vars.win = mlx_new_window(so_long->vars.mlx, size.x+SPRITE_SIZE, size.y, "so_long");
 	sprite_init(so_long);
 	put_tiles(so_long);
 	mlx_hook(so_long->vars.win, DestroyNotify, StructureNotifyMask, close_window, so_long); //Closing button hook

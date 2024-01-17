@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:17:27 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 16:20:24 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:20:56 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,6 @@ void read_file(char **map, char *filename, size_t line_nb)
 void parsing(t_so_long *so_long, char *filename)
 {
 	int map_len;
-	int i;
-	i = 0;
 
 	check_ber(filename);
 	map_len = pre_read(filename);

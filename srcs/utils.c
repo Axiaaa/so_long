@@ -90,9 +90,9 @@ int flood_fill(char *str, t_map_requirements *reqs, t_coordinate player_pos, t_c
 
 void map_size(t_so_long *so_long)
 {
-    if (map_len(*so_long) > 45 || ft_strlen(so_long->game.map[0]) > 75)
+    if (map_len(*so_long) > 15 || ft_strlen(so_long->game.map[0]) > 30)
     {
         ft_putstr_fd("Error\nMap too big", 2);
-        exit(1);
+        exit_error(so_long);
     }
 }

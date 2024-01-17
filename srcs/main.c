@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 21:05:19 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/17 21:40:48 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\nWrong number of arguments\n", 2);
 		return (1);
 	}
-	map_size(&so_long);
 	check_global_map(&so_long);
+	map_size(&so_long);
 	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x / SPRITE_SIZE,
 	so_long.player.cords.y / SPRITE_SIZE},
 	(t_coordinate){ft_strlen(so_long.game.map[0]), map_len(so_long)}))

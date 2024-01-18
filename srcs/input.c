@@ -10,6 +10,7 @@ int close_window(t_so_long *so_long)
 	mlx_destroy_image(so_long->vars.mlx, so_long->game.player_sprite2.ptr);
 	mlx_destroy_image(so_long->vars.mlx, so_long->game.player_sprite3.ptr);
 	mlx_destroy_image(so_long->vars.mlx, so_long->game.player_sprite4.ptr);
+	mlx_destroy_image(so_long->vars.mlx, so_long->game.ghost.ptr);
 	mlx_destroy_window(so_long->vars.mlx, so_long->vars.win);
 	mlx_destroy_display(so_long->vars.mlx);
 	free(so_long->vars.mlx);
@@ -22,18 +23,23 @@ int is_valid(t_so_long *so_long, int x, int y)
 {
 	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == '1')
 		return (0);
+	so_long->player.mooves++;
+	ft_printf("\033[1;36mMoves: %d\n\033[1;36m", so_long->player.mooves);
 	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'C')
 	{
 		so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] = '0';
 		so_long->player.items++;
 	}
-	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'E' && so_long->player.items == so_long->r_map.items)
+	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'E' && so_long->player.items == so_long->r_map.items	)
 	{
-		printf("\033[1;32m\n\nYou won in %d moves !\n\033[1;32m", so_long->player.mooves);
+		ft_printf("\033[1;32m\n\nYou won in %d moves !\n\033[1;32m", so_long->player.mooves);
 		close_window(so_long);
 	}
-	so_long->player.mooves++;
-	printf("\033[1;36mMoves: %d\n\033[1;36m", so_long->player.mooves);
+	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'G')
+	{
+		ft_printf("\033[1;31m\n\nYou lost with %d moves !\n\033[1;31m", so_long->player.mooves);
+		close_window(so_long);
+	}
 	return (1);
 }
 

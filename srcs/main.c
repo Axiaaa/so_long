@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 00:31:41 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:16:41 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	main(int ac, char **av)
 		init_map(&so_long);
 	else 
 	{
-		ft_putstr_fd("Error\nMap invalid (No exit or no items)", 2);
+		ft_putstr_fd("Error\nMap invalid (No acces to exit or items)\n", 2);
 		exit_error(&so_long);
 	}
 	return (0);

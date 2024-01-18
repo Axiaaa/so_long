@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 23:08:52 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 01:14:51 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:05:14 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_game {
 	t_image grass;
 	t_image exit;
 	t_image item;
+	t_image ghost;
 }				t_game;
 
 typedef struct	s_mlx_vars {

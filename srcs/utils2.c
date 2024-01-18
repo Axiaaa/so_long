@@ -24,7 +24,6 @@ void	check_items(char **map, t_map_requirements *reqs,
 	if (map[player_pos.y][player_pos.x] == 'C')
 	{
 		reqs->access_items += 1;
-		ft_printf("item %d\n", reqs->access_items);
 		map[player_pos.y][player_pos.x] = 'Q';
 	}
 	if (map[player_pos.y][player_pos.x] != '1')
@@ -51,7 +50,6 @@ void	check_exit(char **map, t_map_requirements *reqs,
 	if (map[player_pos.y][player_pos.x] == 'E')
 	{
 		reqs->access_exit += 1;
-		ft_printf("exit\n");
 		map[player_pos.y][player_pos.x] = 'Q';
 	}
 	if (map[player_pos.y][player_pos.x] != '1')

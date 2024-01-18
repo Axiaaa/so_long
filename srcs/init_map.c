@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:34:50 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:34:51 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 20:18:41 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	no_event(t_so_long *so_long)
 	char	*s;
 
 	s = ft_itoa(so_long->player.mooves);
-	mlx_string_put(so_long->vars.mlx, so_long->vars.win, 30, 30, 0xff000000, s);
+	mlx_string_put(so_long->vars.mlx, so_long->vars.win, 30, 30, 0xfffff, s);
 	free(s);
 	s = NULL;
 	return (0);

@@ -22,6 +22,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADERS) 
 	@make -C $(LIBFT)
+	@make -C $(MLX)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -Iinc ./libft/Libft.a ./mlx_linux/libmlx.a -L $(MLX) -lXext -lX11
 	@echo "Compilation done"
 

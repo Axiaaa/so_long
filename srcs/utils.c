@@ -95,7 +95,7 @@ void map_size(t_so_long *so_long)
 {
     if (map_len(*so_long) > 15 || ft_strlen(so_long->game.map[0]) > 30)
     {
-        ft_putstr_fd("Error\nMap too big", 2);
+        ft_putstr_fd("Error\nMap too big\n", 2);
         exit_error(so_long);
     }
 }

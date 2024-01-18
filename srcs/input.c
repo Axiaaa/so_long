@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:34:47 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:34:48 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 20:13:06 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	update_player_sprite(t_so_long *so_long, int keycode)
 {
 	void	*tmp;
 
-	if (keycode == XK_a)
+	if (keycode == XK_a || keycode == XK_q)
 	{
 		if (so_long->player.sprite_state == 0)
 		{
@@ -86,7 +86,7 @@ void	update_player_sprite(t_so_long *so_long, int keycode)
 
 int	mooves(int keycode, t_so_long *so_long)
 {
-	if (keycode == XK_w)
+	if (keycode == XK_w || keycode == XK_z)
 		if (is_valid(so_long, so_long->player.cords.x, so_long->player.cords.y
 				- SPRITE_SIZE))
 			so_long->player.cords.y -= SPRITE_SIZE;
@@ -94,7 +94,7 @@ int	mooves(int keycode, t_so_long *so_long)
 		if (is_valid(so_long, so_long->player.cords.x, so_long->player.cords.y
 				+ SPRITE_SIZE))
 			so_long->player.cords.y += SPRITE_SIZE;
-	if (keycode == XK_a)
+	if (keycode == XK_a || keycode == XK_q)
 		if (is_valid(so_long, so_long->player.cords.x - SPRITE_SIZE,
 				so_long->player.cords.y))
 			so_long->player.cords.x -= SPRITE_SIZE;

@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 21:40:48 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 00:31:41 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_so_long	init_so_long(void)
 	so_long.game.map = NULL;
 	so_long.player.items = 0;
 	so_long.player.mooves = 0;
+	so_long.player.sprite_state = 0;
 	return (so_long);
 }
 

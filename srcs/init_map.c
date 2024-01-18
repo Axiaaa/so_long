@@ -3,7 +3,11 @@
 
 int no_event(t_so_long *so_long)
 {
-	mlx_int_do_nothing(so_long->vars.mlx);
+	char *s;
+	s = ft_itoa(so_long->player.mooves);
+	mlx_string_put(so_long->vars.mlx, so_long->vars.win, 30, 30, 0xff000000, s);
+	free(s);
+	s = NULL;
 	return (0);
 }
 

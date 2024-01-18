@@ -36,8 +36,9 @@ void process_tiles(t_so_long *so_long, char c, t_coordinate xy)
         mlx_put_image_to_window(so_long->vars.mlx, so_long->vars.win,  so_long->game.item.ptr, xy.x, xy.y);
     else if (c == 'E')
         mlx_put_image_to_window(so_long->vars.mlx, so_long->vars.win, so_long->game.exit.ptr, xy.x, xy.y);
-    mlx_put_image_to_window(so_long->vars.mlx, so_long->vars.win, so_long->game.player_sprite.ptr, so_long->player.cords.x, so_long->player.cords.y);
+    mlx_put_image_to_window(so_long->vars.mlx, so_long->vars.win, so_long->game.player_sprite1.ptr, so_long->player.cords.x, so_long->player.cords.y);
 }
+
 
 void put_tiles(t_so_long *so_long)
 {

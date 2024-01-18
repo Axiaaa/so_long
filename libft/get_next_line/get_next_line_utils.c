@@ -6,19 +6,19 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:04:34 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/13 12:25:28 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:40:56 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strdup_GNL(const char *s)
+char	*ft_strdup_gnl(const char *s)
 {
 	char	*s2;
 	int		i;
 
 	if (!s)
-		return (ft_strdup_GNL(""));
+		return (ft_strdup_gnl(""));
 	i = 0;
 	while (s[i])
 		i++;

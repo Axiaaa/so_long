@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:05:25 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/12 15:04:45 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:41:39 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,12 @@ int	ft_args_process(char c, va_list args)
 		return (write(1, "%", 1));
 	return (-1);
 }
+
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	long count;
-	int temp;
+	va_list	args;
+	long	count;
+	int		temp;
 
 	va_start(args, format);
 	count = 0;

@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 10:55:12 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/12 14:47:34 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:44:09 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_read_line(int fd, char **temp, char **stash)
 			return ;
 		}
 		buff[read_byte] = '\0';
-		*temp = ft_strdup_GNL(*stash);
+		*temp = ft_strdup_gnl(*stash);
 		free_strs(stash, NULL, NULL);
 		*stash = ft_strjoin(*temp, buff);
 		free_strs(temp, NULL, NULL);
@@ -97,7 +97,7 @@ char	*ft_parse_line(char **stash, char **temp)
 {
 	char	*line;
 
-	*temp = ft_strdup_GNL(*stash);
+	*temp = ft_strdup_gnl(*stash);
 	free_strs(stash, NULL, NULL);
 	*stash = ft_get_after_newline(*temp);
 	line = ft_get_before_newline(*temp);

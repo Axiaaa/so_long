@@ -13,8 +13,8 @@ SRC =	srcs/main.c 		\
 		srcs/init_map.c 	\
 		srcs/input.c 		\
 		srcs/tiles.c 		\
-		srcs/utils.c 		\
 		srcs/utils2.c 		\
+		srcs/utils.c 		\
 
 OBJ = $(SRC:.c=.o)
 HEADERS = inc/so_long.h

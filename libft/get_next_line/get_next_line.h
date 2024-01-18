@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 10:55:54 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/12 14:47:29 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:41:01 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*ft_strdup_GNL(const char *s);
+char	*ft_strdup_gnl(const char *s);
 void	*ft_malloc_zero(size_t nmemb, size_t size);
 char	*get_next_line(int fd);
 char	*ft_parse_line(char **stash, char **temp);

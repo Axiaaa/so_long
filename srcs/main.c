@@ -6,11 +6,17 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:16:41 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:31:40 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
+void	exit_error(t_so_long *so_long)
+{
+	free_map(so_long->game.map);
+	exit(1);
+}
 
 void	free_map(char **map)
 {
@@ -32,7 +38,7 @@ void	check_ber(char *filename)
 
 	i = ft_strlen(filename);
 	if (filename[i - 1] != 'r' || filename[i - 2] != 'e' || filename[i
-		- 3] != 'b' || filename[i - 4] != '.')
+			- 3] != 'b' || filename[i - 4] != '.')
 	{
 		ft_putstr_fd("Error\nWrong file extension", 1);
 		exit(1);
@@ -46,8 +52,6 @@ t_so_long	init_so_long(void)
 	so_long.r_map.exit = 0;
 	so_long.r_map.items = 0;
 	so_long.r_map.player_spawn = 0;
-	// so_long.vars.mlx = NULL;
-	// so_long.vars.win = NULL;
 	so_long.game.map = NULL;
 	so_long.player.items = 0;
 	so_long.player.mooves = 0;
@@ -69,11 +73,11 @@ int	main(int ac, char **av)
 	}
 	check_global_map(&so_long);
 	map_size(&so_long);
-	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x / SPRITE_SIZE,
-	so_long.player.cords.y / SPRITE_SIZE},
-	(t_coordinate){ft_strlen(so_long.game.map[0]), map_len(so_long)}))
+	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x
+			/ SPRITE_SIZE, so_long.player.cords.y / SPRITE_SIZE},
+		(t_coordinate){ft_strlen(so_long.game.map[0]), map_len(so_long)}))
 		init_map(&so_long);
-	else 
+	else
 	{
 		ft_putstr_fd("Error\nMap invalid (No acces to exit or items)\n", 2);
 		exit_error(&so_long);

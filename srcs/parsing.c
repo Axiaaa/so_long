@@ -6,17 +6,17 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:17:27 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 18:20:56 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:36:42 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-int    open_file(char *filename)
+int	open_file(char *filename)
 {
-	int fd;
-	fd = open(filename, O_RDONLY);
+	int	fd;
 
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
 		perror("Error in ft_open_file ");
@@ -27,9 +27,9 @@ int    open_file(char *filename)
 		return (fd);
 }
 
-int     close_file(int file)
+int	close_file(int file)
 {
-	int file_closed;
+	int	file_closed;
 
 	file_closed = close(file);
 	if (file_closed == -1)
@@ -41,11 +41,11 @@ int     close_file(int file)
 	return (0);
 }
 
-int pre_read(char *filename)
+int	pre_read(char *filename)
 {
-	int fd;
-	char *line;
-	int i;
+	int		fd;
+	char	*line;
+	int		i;
 
 	fd = open_file(filename);
 	i = 0;
@@ -61,20 +61,10 @@ int pre_read(char *filename)
 	return (i);
 }
 
-int map_len(t_so_long so_long)
+void	read_file(char **map, char *filename, size_t line_nb)
 {
-	int i;
-
-	i = 0;
-	while (so_long.game.map[i])
-		i++;
-	return (i);
-}
-
-void read_file(char **map, char *filename, size_t line_nb)
-{
-	size_t i;
-	int fd;
+	size_t	i;
+	int		fd;
 
 	fd = open_file(filename);
 	i = 0;
@@ -84,13 +74,12 @@ void read_file(char **map, char *filename, size_t line_nb)
 	close_file(fd);
 }
 
-void parsing(t_so_long *so_long, char *filename)
+void	parsing(t_so_long *so_long, char *filename)
 {
-	int map_len;
+	int	map_len;
 
 	check_ber(filename);
 	map_len = pre_read(filename);
 	so_long->game.map = malloc(sizeof(char *) * (map_len + 1));
 	read_file(so_long->game.map, filename, map_len);
 }
-

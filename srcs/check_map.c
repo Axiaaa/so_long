@@ -6,23 +6,16 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:01:09 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/17 21:16:11 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:34:53 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void exit_error(t_so_long *so_long)
+void	is_rectangle(t_so_long *so_long)
 {
-	free_map(so_long->game.map);
-	exit(1);
-}
-
-
-void is_rectangle(t_so_long *so_long)
-{
-	size_t i;
-	size_t len_str;
+	size_t	i;
+	size_t	len_str;
 
 	i = 0;
 	len_str = 0;
@@ -39,9 +32,9 @@ void is_rectangle(t_so_long *so_long)
 	}
 }
 
-void check_verticales_wall(t_so_long *so_long)
+void	check_verticales_wall(t_so_long *so_long)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < (size_t)map_len(*so_long) - 1)
@@ -65,9 +58,9 @@ void check_verticales_wall(t_so_long *so_long)
 	}
 }
 
-void check_horizontales_wall(t_so_long *so_long)
+void	check_horizontales_wall(t_so_long *so_long)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < ft_strlen(so_long->game.map[0]) - 1)
@@ -91,7 +84,7 @@ void check_horizontales_wall(t_so_long *so_long)
 	}
 }
 
-void char_check(t_so_long *so_long, char c, size_t i, size_t j)
+void	char_check(t_so_long *so_long, char c, size_t i, size_t j)
 {
 	if (c == 'C')
 		so_long->r_map.items += 1;
@@ -105,10 +98,11 @@ void char_check(t_so_long *so_long, char c, size_t i, size_t j)
 		so_long->r_map.exit += 1;
 }
 
-void check_global_map(t_so_long *so_long)
+void	check_global_map(t_so_long *so_long)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
+
 	i = 0;
 	check_horizontales_wall(so_long);
 	check_verticales_wall(so_long);
@@ -124,8 +118,9 @@ void check_global_map(t_so_long *so_long)
 		}
 		j++;
 	}
-	if (so_long->r_map.exit == 1 && so_long->r_map.player_spawn == 1 && so_long->r_map.items >= 1)
-		return;
+	if (so_long->r_map.exit == 1 && so_long->r_map.player_spawn == 1
+		&& so_long->r_map.items >= 1)
+		return ;
 	ft_putstr_fd("Error\nMap invalid (Requirements not fullfilled)", 2);
 	exit_error(so_long);
 }

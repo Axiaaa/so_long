@@ -14,6 +14,7 @@ SRC =	srcs/main.c 		\
 		srcs/input.c 		\
 		srcs/tiles.c 		\
 		srcs/utils.c 		\
+		srcs/utils2.c 		\
 
 OBJ = $(SRC:.c=.o)
 HEADERS = inc/so_long.h

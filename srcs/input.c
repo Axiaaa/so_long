@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/18 14:34:47 by lcamerly          #+#    #+#             */
+/*   Updated: 2024/01/18 14:34:48 by lcamerly         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/so_long.h"
 
-int close_window(t_so_long *so_long)
+int	close_window(t_so_long *so_long)
 {
 	mlx_destroy_image(so_long->vars.mlx, so_long->game.wall.ptr);
 	mlx_destroy_image(so_long->vars.mlx, so_long->game.grass.ptr);
@@ -19,7 +31,7 @@ int close_window(t_so_long *so_long)
 	return (0);
 }
 
-int is_valid(t_so_long *so_long, int x, int y)
+int	is_valid(t_so_long *so_long, int x, int y)
 {
 	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == '1')
 		return (0);
@@ -30,22 +42,26 @@ int is_valid(t_so_long *so_long, int x, int y)
 		so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] = '0';
 		so_long->player.items++;
 	}
-	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'E' && so_long->player.items == so_long->r_map.items	)
+	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'E'
+		&& so_long->player.items == so_long->r_map.items)
 	{
-		ft_printf("\033[1;32m\n\nYou won in %d moves !\n\033[1;32m", so_long->player.mooves);
+		ft_printf("\033[1;32m\n\nYou won in %d moves !\n\033[1;32m",
+			so_long->player.mooves);
 		close_window(so_long);
 	}
 	if (so_long->game.map[y / SPRITE_SIZE][x / SPRITE_SIZE] == 'G')
 	{
-		ft_printf("\033[1;31m\n\nYou lost with %d moves !\n\033[1;31m", so_long->player.mooves);
+		ft_printf("\033[1;31m\n\nYou lost with %d moves !\n\033[1;31m",
+			so_long->player.mooves);
 		close_window(so_long);
 	}
 	return (1);
 }
 
-void update_player_sprite(t_so_long *so_long, int keycode)
+void	update_player_sprite(t_so_long *so_long, int keycode)
 {
-	void *tmp;
+	void	*tmp;
+
 	if (keycode == XK_a)
 	{
 		if (so_long->player.sprite_state == 0)
@@ -68,19 +84,23 @@ void update_player_sprite(t_so_long *so_long, int keycode)
 	}
 }
 
-int mooves(int keycode, t_so_long *so_long) 
+int	mooves(int keycode, t_so_long *so_long)
 {
 	if (keycode == XK_w)
-		if (is_valid(so_long, so_long->player.cords.x, so_long->player.cords.y - SPRITE_SIZE))
+		if (is_valid(so_long, so_long->player.cords.x, so_long->player.cords.y
+				- SPRITE_SIZE))
 			so_long->player.cords.y -= SPRITE_SIZE;
 	if (keycode == XK_s)
-		if (is_valid(so_long, so_long->player.cords.x, so_long->player.cords.y + SPRITE_SIZE))
+		if (is_valid(so_long, so_long->player.cords.x, so_long->player.cords.y
+				+ SPRITE_SIZE))
 			so_long->player.cords.y += SPRITE_SIZE;
 	if (keycode == XK_a)
-		if (is_valid(so_long, so_long->player.cords.x - SPRITE_SIZE, so_long->player.cords.y))
+		if (is_valid(so_long, so_long->player.cords.x - SPRITE_SIZE,
+				so_long->player.cords.y))
 			so_long->player.cords.x -= SPRITE_SIZE;
 	if (keycode == XK_d)
-		if (is_valid(so_long, so_long->player.cords.x + SPRITE_SIZE, so_long->player.cords.y))
+		if (is_valid(so_long, so_long->player.cords.x + SPRITE_SIZE,
+				so_long->player.cords.y))
 			so_long->player.cords.x += SPRITE_SIZE;
 	if (keycode == XK_Escape)
 		close_window(so_long);
@@ -88,4 +108,3 @@ int mooves(int keycode, t_so_long *so_long)
 	put_tiles(so_long);
 	return (0);
 }
-

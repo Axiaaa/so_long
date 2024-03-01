@@ -3,9 +3,8 @@ LIBFT = ./libft
 FT_PRINTF = ./libft/ft_printf
 GET_NEXT_LINE = ./libft/get_next_line
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g -g3
 MLX = ./mlx_linux
-
 
 SRC =	srcs/main.c 		\
 		srcs/parsing.c		\

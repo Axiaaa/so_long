@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 18:18:43 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:36:19 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		parsing(&so_long, av[1]);
 	else
-		exit_error(&so_long, "Wrong number of argument !\n./so_long [map]", WRONG_ARG_NUM);
+		exit_error(&so_long, "Wrong number of argument !\n./so_long [map]\n", WRONG_ARG_NUM);
 	check_global_map(&so_long);
 	check_map_size(&so_long);
 	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x

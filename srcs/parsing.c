@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:17:27 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 17:43:12 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:38:08 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	close_file(int file)
 	if (file_closed == -1)
 	{
 		perror("Error in ft_close_file : ");
-		return (1);
 		exit(1);
+		return (1);
 	}
 	return (0);
 }

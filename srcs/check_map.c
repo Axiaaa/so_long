@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:01:09 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:34:53 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:01:15 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,20 @@ void	char_check(t_so_long *so_long, char c, size_t i, size_t j)
 {
 	if (c == 'C')
 		so_long->r_map.items += 1;
-	if (c == 'P')
+	else if (c == 'P')
 	{
 		so_long->r_map.player_spawn += 1;
 		so_long->player.cords.x = i * SPRITE_SIZE;
 		so_long->player.cords.y = j * SPRITE_SIZE;
 	}
-	if (c == 'E')
+	else if (c == 'E')
 		so_long->r_map.exit += 1;
+	else if (c != 'G' && c != '1' && c != '0')
+	{
+		ft_printf("Unknown character in the map !\n");
+		exit_error(so_long);
+	}
 }
-
 void	check_global_map(t_so_long *so_long)
 {
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 23:08:52 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 17:43:41 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:14:38 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ int						flood_fill(char *str, t_map_requirements *reqs,
 							t_coordinate player_pos, t_coordinate witdhheight);
 void					check_items(char **map, t_map_requirements *reqs,
 							t_coordinate player_pos, t_coordinate witdhheight);
-void					map_size(t_so_long *so_long);
+void					check_map_size(t_so_long *so_long);
 void					sprite_init2(t_so_long *so_long);
 void					check_exit(char **map, t_map_requirements *reqs,
 							t_coordinate player_pos, t_coordinate witdhheight);

@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 18:03:11 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:18:43 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ int	main(int ac, char **av)
 	else
 		exit_error(&so_long, "Wrong number of argument !\n./so_long [map]", WRONG_ARG_NUM);
 	check_global_map(&so_long);
-	map_size(&so_long);
+	check_map_size(&so_long);
 	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x
 			/ SPRITE_SIZE, so_long.player.cords.y / SPRITE_SIZE},
 		(t_coordinate){ft_strlen(so_long.game.map[0]), map_len(so_long)}))
 		init_map(&so_long);
 	else
 		exit_error(&so_long, "Error\nMap invalid (No acces to exit or items)\n", CANT_ACCESS);
-	return (0);
+	return (Success);
 }

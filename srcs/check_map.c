@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:01:09 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 17:32:34 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:19:58 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ void	is_rectangle(t_so_long *so_long)
 	size_t	i;
 	size_t	len_str;
 
-	i = 0;
-	len_str = 0;
+	i = 1;
+	len_str = ft_strlen(so_long->game.map[0]);
 	while (so_long->game.map[i] != NULL)
 	{
-		if (len_str == 0)
-			len_str = ft_strlen(so_long->game.map[i]);
 		if (len_str != ft_strlen(so_long->game.map[i]))
 			exit_error(so_long, "Error\nMap invalid (Not a rectangle)", MAP_ISNT_RECTANGLE);
 		i++;

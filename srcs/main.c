@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 17:42:38 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:03:11 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	free_map(char **map)
 		free(map[i]);
 		i++;
 	}
-	free(map[i]);
 	free(map);
 }
 
@@ -39,8 +38,8 @@ void	check_ber(t_so_long *so_long, char *filename)
 	int	i;
 
 	i = ft_strlen(filename);
-	if (filename[i - 1] != 'r' || filename[i - 2] != 'e' || filename[i
-			- 3] != 'b' || filename[i - 4] != '.')
+	if (filename[i - 1] != 'r' || filename[i - 2] != 'e' || 
+		filename[i- 3] != 'b' || ((i - 4 >= 0) && filename[i - 4] != '.'))
 		exit_error(so_long, "Map extension must be .ber\n", WRONG_ARG_NUM);
 }
 

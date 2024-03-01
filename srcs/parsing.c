@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:17:27 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:36:42 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:43:12 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	parsing(t_so_long *so_long, char *filename)
 {
 	int	map_len;
 
-	check_ber(filename);
+	check_ber(so_long, filename);
 	map_len = pre_read(filename);
 	so_long->game.map = malloc(sizeof(char *) * (map_len + 1));
 	read_file(so_long->game.map, filename, map_len);

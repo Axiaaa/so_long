@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 23:08:52 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/03/01 17:31:51 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:43:41 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void					char_check(t_so_long *so_long, char c, size_t i,
 							size_t j);
 void					check_global_map(t_so_long *so_long);
 void					exit_error(t_so_long *so_long, char *s, t_errors code);
-void					check_ber(char *filename);
+void					check_ber(t_so_long *so_long, char *filename);
 int						map_len(t_so_long so_long);
 
 //		INIT_MAP.C

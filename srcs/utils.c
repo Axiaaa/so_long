@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:34:30 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:36:32 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:32:58 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,5 @@ int	flood_fill(char *str, t_map_requirements *reqs, t_coordinate player_pos,
 void	map_size(t_so_long *so_long)
 {
 	if (map_len(*so_long) > 15 || ft_strlen(so_long->game.map[0]) > 30)
-	{
-		ft_putstr_fd("Error\nMap too big\n", 2);
-		exit_error(so_long);
-	}
+		exit_error(so_long, "Error\nMap too big\n", MAP_TOO_BIG);
 }

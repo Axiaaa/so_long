@@ -6,7 +6,7 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 23:08:52 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 20:35:45 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:31:51 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,18 @@ typedef struct s_so_long
 	t_mlx_vars			vars;
 }						t_so_long;
 
+typedef enum s_errors
+{
+	WRONG_FILE_EXTENSION,
+	CANT_ACCESS,
+	REQUIREMENTS_ISSUE,
+	MAP_TOO_BIG,
+	WALL_ISSUE,
+	MAP_ISNT_RECTANGLE,
+	WRONG_ARG_NUM,
+	UNKNOW_CHAR,
+}	t_errors;
+
 # define SPRITE_SIZE 64
 # define PACMAN_SPRITE "./ressources/pacman1_tile.xpm"
 # define PACMAN_SPRITE2 "./ressources/pacman2_tile.xpm"
@@ -103,7 +115,7 @@ void					check_horizontales_wall(t_so_long *so_long);
 void					char_check(t_so_long *so_long, char c, size_t i,
 							size_t j);
 void					check_global_map(t_so_long *so_long);
-void					exit_error(t_so_long *so_long);
+void					exit_error(t_so_long *so_long, char *s, t_errors code);
 void					check_ber(char *filename);
 int						map_len(t_so_long so_long);
 

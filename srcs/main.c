@@ -6,16 +6,18 @@
 /*   By: lcamerly <lcamerly@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:16:29 by lcamerly          #+#    #+#             */
-/*   Updated: 2024/01/18 14:31:40 by lcamerly         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:29:27 by lcamerly         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void	exit_error(t_so_long *so_long)
+void	exit_error(t_so_long *so_long, char *s, t_errors code)
 {
-	free_map(so_long->game.map);
-	exit(1);
+	ft_putstr_fd(s, 2);
+	if (so_long->game.map)
+		free_map(so_long->game.map);
+	exit(code);
 }
 
 void	free_map(char **map)
@@ -67,10 +69,7 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		parsing(&so_long, av[1]);
 	else
-	{
-		ft_putstr_fd("Error\nWrong number of arguments\n", 2);
-		return (1);
-	}
+		exit_error(&so_long, "Wrong number of argument !\n./so_long [map]", WRONG_ARG_NUM);
 	check_global_map(&so_long);
 	map_size(&so_long);
 	if (flood_fill(av[1], &so_long.r_map, (t_coordinate){so_long.player.cords.x
@@ -78,9 +77,6 @@ int	main(int ac, char **av)
 		(t_coordinate){ft_strlen(so_long.game.map[0]), map_len(so_long)}))
 		init_map(&so_long);
 	else
-	{
-		ft_putstr_fd("Error\nMap invalid (No acces to exit or items)\n", 2);
-		exit_error(&so_long);
-	}
+		exit_error(&so_long, "Error\nMap invalid (No acces to exit or items)\n", CANT_ACCESS);
 	return (0);
 }
